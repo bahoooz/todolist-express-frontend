@@ -1,0 +1,26 @@
+### Créer un item
+POST http://localhost:3000/api/item
+Content-Type: application/json
+
+{
+  "title": "fraise bleue et verte"
+}
+
+###
+
+### Récupérer tous les utilisateurs (si tu fais une route GET plus tard)
+GET http://localhost:3000/api/item
+
+### PATCH un item existant (remplace `YOUR_ITEM_ID` par un vrai ID)
+PATCH http://localhost:3000/api/item/6
+Content-Type: application/json
+
+{
+  "title": "whisky pur sans glaçon",
+  "quantity": 4,
+  "color": "#D2B48C"
+}
+
+### DELETE un item existant (remplace `YOUR_ITEM_ID` par un vrai ID)
+DELETE http://localhost:3000/api/item/7
+Content-Type: application/json
