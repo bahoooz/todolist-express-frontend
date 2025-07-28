@@ -2,6 +2,8 @@
 
 Interface utilisateur moderne pour la todolist, développée avec **Next.js 15**, **Zustand**, **Tailwind CSS** et **TypeScript**.
 
+Développée en 2 jours.
+
 ---
 
 ## 🚀 Stack utilisée
