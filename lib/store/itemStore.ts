@@ -55,5 +55,3 @@ export const useItemStore = create<ItemStore>((set) => ({
     await useItemStore.getState().fetchItems();
   },
 }));
-
-// Demander a GPT c'est quoi Partial dans les type de updateItem, c'est quoi getState et c'est quoi la diff entre une fonction normale et une fonction ou une methode je ne sais pas quand tu la créer dans le store. Et aussi faire {...item} ça veut dire quoi ? Ca veut dire genre met moi aussi tous les params qui restent ?

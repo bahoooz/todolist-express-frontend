@@ -1,5 +1,5 @@
 import { ColorMenuTypes } from "@/lib/types";
-import React, { useState } from "react";
+import React from "react";
 
 const colors = [
   "#93c4ff", // Bleu
