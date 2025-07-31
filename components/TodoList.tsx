@@ -8,13 +8,13 @@ import { useItemStore } from "@/lib/store/itemStore";
 export default function TodoList() {
   const { items, fetchItems } = useItemStore();
   const [isLoading, setIsLoading] = useState(true);
+
   const remainingCount = Array.isArray(items)
     ? items.filter((item) => !item.completed).length
     : 0;
 
   useEffect(() => {
-    fetchItems();
-    setIsLoading(false);
+    fetchItems().finally(() => setIsLoading(false));
   }, []);
 
   return (
@@ -22,16 +22,15 @@ export default function TodoList() {
       <InputCreateItem />
       {isLoading ? (
         <p>Chargement en cours...</p>
-      ) : items.length === 0 ? (
+      ) : Array.isArray(items) && items.length === 0 ? (
         <p>Aucune tâche créée</p>
       ) : (
         <div className="flex flex-col gap-2">
-          {items.map((item) => (
-            <ItemTodo key={item.id} {...item} />
-          ))}
+          {Array.isArray(items) &&
+            items.map((item) => <ItemTodo key={item.id} {...item} />)}
         </div>
       )}
-      {items.length > 0 && (
+      {Array.isArray(items) && items.length > 0 && (
         <p>
           {remainingCount} tâche{remainingCount > 1 ? "s" : ""} à faire
         </p>
