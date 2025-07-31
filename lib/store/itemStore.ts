@@ -17,7 +17,7 @@ export const useItemStore = create<ItemStore>((set) => ({
   items: [],
 
   fetchItems: async () => {
-    const res = await fetch("http://localhost:4000/items", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/items`, {
       method: "GET",
     });
     const data = await res.json();
@@ -25,7 +25,7 @@ export const useItemStore = create<ItemStore>((set) => ({
   },
 
   createItem: async (title, quantity, color) => {
-    const res = await fetch("http://localhost:4000/items", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/items`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,14 +38,14 @@ export const useItemStore = create<ItemStore>((set) => ({
   },
 
   deleteItem: async (id) => {
-    await fetch(`http://localhost:4000/items/${id}`, {
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${id}`, {
       method: "DELETE",
     });
     await useItemStore.getState().fetchItems();
   },
 
   updateItem: async (id, updatedFields) => {
-    await fetch(`http://localhost:4000/items/${id}`, {
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
