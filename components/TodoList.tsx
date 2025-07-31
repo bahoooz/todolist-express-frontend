@@ -8,7 +8,9 @@ import { useItemStore } from "@/lib/store/itemStore";
 export default function TodoList() {
   const { items, fetchItems } = useItemStore();
   const [isLoading, setIsLoading] = useState(true);
-  const remainingCount = items.filter((item) => !item.completed).length;
+  const remainingCount = Array.isArray(items)
+    ? items.filter((item) => !item.completed).length
+    : 0;
 
   useEffect(() => {
     fetchItems();

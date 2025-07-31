@@ -38,14 +38,14 @@ export const useItemStore = create<ItemStore>((set) => ({
   },
 
   deleteItem: async (id) => {
-    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${id}`, {
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/items/${id}`, {
       method: "DELETE",
     });
     await useItemStore.getState().fetchItems();
   },
 
   updateItem: async (id, updatedFields) => {
-    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${id}`, {
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/items/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
