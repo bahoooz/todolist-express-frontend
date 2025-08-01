@@ -21,7 +21,7 @@ export default function TodoList() {
     <div className="flex flex-col gap-4 w-screen px-4 sm:w-[500px]">
       <InputCreateItem />
       {isLoading ? (
-        <p>Chargement en cours...</p>
+        <p>Mise en route du serveur Node.js...</p>
       ) : Array.isArray(items) && items.length === 0 ? (
         <p>Aucune tâche créée</p>
       ) : (
