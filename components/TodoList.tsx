@@ -18,7 +18,7 @@ export default function TodoList() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-4 w-[500px]">
+    <div className="flex flex-col gap-4 w-screen px-4 sm:w-[500px]">
       <InputCreateItem />
       {isLoading ? (
         <p>Chargement en cours...</p>

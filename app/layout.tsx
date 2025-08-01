@@ -11,6 +11,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Todolist Next.js x Express.js",
   description: "A todolist created with Express.js",
+  icons: {
+    icon: [{ url: "/assets/favicon.png", sizes: "32x32", type: "image/x-icon" },]
+  }
 };
 
 export default function RootLayout({
