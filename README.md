@@ -2,6 +2,8 @@
 
 Interface utilisateur moderne pour la todolist, développée avec **Next.js 15**, **Zustand**, **Tailwind CSS** et **TypeScript**.
 
+**Repo backend disponible ici : https://github.com/bahoooz/todolist-express-backend**
+
 Développée en 2 jours.
 
 ---
