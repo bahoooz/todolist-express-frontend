@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Credits() {
   return (
-    <div className="absolute top-3/4">
+    <div className="absolute top-[90%]">
       <h2 className="text-xl flex items-center gap-2">
         Build by{" "}
         <Image
